@@ -1,5 +1,108 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  body
+    head
+      title Blood² Login
+      style
+        include style.css
+      script.
+        function validateLogForm() {
+        var e = document.forms["log"]["login"].value;
+        var p = document.forms["log"]["password"].value;
+        var at = false;
+        var dot = false;
+        var i;
+        for (i = 0; i < e.length; i++)
+        {
+        if (e[i] == "@")
+        {
+        at = true;
+        }
+        if (e[i] == ".")
+        {
+        dot = true;
+        }
+        }
+        if (e == null || e == "" || p == null || p == "")
+        {
+        document.getElementById("error").innerHTML = "Must enter all info";
+        return false;
+        }
+        else if(at == false || dot == false)
+        {
+        document.getElementById("error").innerHTML = "Email is not valid";
+        return false;
+        }
+        else
+        {
+        return true;
+        }
+        }
+      script.
+        function validateNewForm() {
+        var p = document.forms["new"]["NewPass"].value;
+        var e = document.forms["new"]["NewLog"].value;
+        var f = document.forms["new"]["FName"].value;
+        var l = document.forms["new"]["LName"].value;
+        var at = false;
+        var dot = false;
+        var i;
+        for (i = 0; i < e.length; i++)
+        {
+        if (e[i] == "@")
+        {
+        at = true;
+        }
+        if (e[i] == ".")
+        {
+        dot = true;
+        }
+        }
+        if (f == null || f == "" || l == null || l == "" || e == null || e == "" || p == null || p == "")
+        {
+        document.getElementById("error").innerHTML = "Must enter all info";
+        return false;
+        }
+        else if(at == false || dot == false)
+        {
+        document.getElementById("error").innerHTML = "Email is not valid";
+        return false;
+        }
+        else
+        {
+        return true;
+        }
+        }
+    h1
+      b Blood²
+    p#error
+    h4 Login to Web App
+    form(name='log', method='post', onsubmit='return validateLogForm()')
+      p
+        input(type='text', name='login', value='', placeholder='Email')
+      p
+        input(type='password', name='password', value='', placeholder='Password')
+      p.remember_me
+        label
+          input#remember_me(type='checkbox', name='remember_me')
+          | 			Remember me
+      p
+        input(type='submit', value='Login')
+    h4 Create New Account OR Guest Access
+    form(name='new', method='post', onsubmit='return validateNewForm()')
+      p
+        input(type='text', name='NewLog', value='', placeholder='Email')
+      p
+        input(type='password', name='NewPass', value='', placeholder='Password')
+      p
+        input(type='text', name='FName', value='', placeholder='First Name')
+      p
+        input(type='text', name='LName', value='', placeholder='Last Name')
+      p.remember_me
+        label
+          input#remember_me(type='checkbox', name='remember_me')
+          | 			Remember me
+      p
+        input(type='submit', value='Create Account')
+      p
+        input(type='submit', value='Guest Access')

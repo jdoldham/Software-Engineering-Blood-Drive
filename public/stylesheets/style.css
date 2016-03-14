@@ -1,8 +1,31 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: lightblue;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+    color: navy;
+	text-align: center;
+	font: 30px arial, sans-serif;
+}
+h4 {
+    color: navy;
+	text-align: center;
+	font: 20px arial, sans-serif;
+}
+p {
+	text-align: center;
+	font: 15px arial, sans-serif;
+}
+#error {
+	background-color:yellow;
+    color: red;
+	text-align: center;
+	font: 17px arial, sans-serif;
+	
+}
+body {
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: right bottom;
 }
