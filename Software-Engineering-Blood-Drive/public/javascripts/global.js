@@ -11,9 +11,6 @@ $(document).ready(function() {
   
   //Add User button click
   $('#btnAddUser').on('click', addUser);
-  
-  //Delete User link click
-  $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
 });
 
 // Functions =============================================================
@@ -62,6 +59,7 @@ function showUserInfo(event) {
 
 //Add User
 function addUser(event) {
+  window.alert('here');
   event.preventDefault();
   
   //basic validation - check to see if any fields are blank
@@ -77,13 +75,13 @@ function addUser(event) {
       'email': $('#addUser fieldset input#inputUserEmail').val(),
       'fname': $('#addUser fieldset input#inputFirstName').val(),
       'lname': $('#addUser fieldset input#inputLastName').val(),
-      'dob_year': $('#addUser fieldset input#inputYear').val(),
-      'dob_month': $('#addUser fieldset input#inputMonth').val(),
       'dob_day': $('#addUser fieldset input#inputDay').val(),
+      'dob_month': $('#addUser fieldset input#inputMonth').val(),
+      'dob_year': $('#addUser fieldset input#inputYear').val(),
+      'blood_type': $('#addUser fieldset input#inputBloodType').val(),
       'zipcode': $('#addUser fieldset input#inputLocation').val(),
-      'donation_count': $('#addUser fieldset input#inputVisits').val(),
-      'password': $('#addUser fieldset input#inputPassword').val(),
-      'blood_type': $('#addUser fieldset input#inputBloodType').val()
+      'donation_count': $('#addUser fieldset input#inputVisits').val()
+      'password': $('#addUser fieldset input#inputPassword').val()
     }
     
     //Use AJAX to post the object to our adduser service
@@ -107,37 +105,6 @@ function addUser(event) {
   } else {
     //If errorCount is more than 0, error out
     alert('Please fill in all fields');
-    return false;
-  }
-};
-
-//Delete User
-function deleteUser(event) {
-  event.preventDefault();
-
-  // Pop up a confirmation dialog
-  var confirmation = confirm('Are you sure you want to delete this user?');
-
-  // Check and make sure the user confirmed
-  if (confirmation === true) {
-    // If they did, do our delete
-    $.ajax({
-        type: 'DELETE',
-        url: '/users/deleteuser/' + $(this).attr('rel')
-    }).done(function( response ) {
-      // Check for a successful (blank) response
-      if (response.msg === '') {
-      }
-      else {
-        alert('Error: ' + response.msg);
-      }
-
-      // Update the table
-      populateTable();
-    });
-  }
-  else {
-  // If they said no to the confirm, do nothing
     return false;
   }
 };
