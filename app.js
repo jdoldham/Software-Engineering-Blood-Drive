@@ -12,6 +12,7 @@ var db = monk('localhost:27017/blood');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var calendar = require('./routes/calendar');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use(function(req,res,next){
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/calendar', calendar);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -42,6 +44,8 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+
 
 // error handlers
 

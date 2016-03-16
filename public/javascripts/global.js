@@ -14,6 +14,9 @@ $(document).ready(function() {
   
   //Delete User link click
   $('#userList table tbody').on('click', 'td a.linkdeleteuser', deleteUser);
+  
+  //add calendar button click
+  //$('#btnAddCalendar').on('click', addCalendar);
 });
 
 // Functions =============================================================
