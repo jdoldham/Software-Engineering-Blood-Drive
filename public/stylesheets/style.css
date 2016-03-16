@@ -30,28 +30,61 @@ body {
     background-position: right bottom;
 }
 table {
+	margin-left:auto; 
+    margin-right:auto;
     font: 100% Verdana, Arial, Helvetica, sans-serif;
+	border: 2px solid black;
     table-layout: fixed;
     border-collapse: collapse;
-    width: 100%;
+    width: 50%;
 }
 th {
     padding: 0 0.5em;
+	border: 2px solid black;
+	border-collapse: collapse;
     text-align: center;
-    background-color:navy;
-    color:white;
+    background-color:white;
+    color:black;
 }
 td  {     
     font-size: medium;
     padding: 0.25em 0.25em;   
     width: 14%; 
-    height: 80px;
+    height: 15px;
     text-align: left;
     vertical-align: top;
+	border: 2px solid black;
+	border-collapse: collapse;
+	background-color:white;
+    color:black;
 }
 .date  {     
     font-size: large;
     padding: 0.25em 0.25em;   
     text-align: left;
     vertical-align: top;
-    }
+}
+fieldset {
+	margin: 0 auto;
+	text-align: left;
+	width: 400px;
+    border-color:navy;
+    border-style: solid;
+}
+fieldset.log {
+	margin: 0 auto;
+	text-align: left;
+	width: 250px;
+    border-color:navy;
+    border-style: solid;
+}
+form
+{
+    text-align: center;
+}
+legend {
+	font: 20px arial, sans-serif;
+	border:1px solid navy;
+	color:navy;
+	text-align:center;
+}

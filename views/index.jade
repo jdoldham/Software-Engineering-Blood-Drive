@@ -1,108 +1,84 @@
-doctype html
-html
-  body
-    head
-      title Blood² Login
-      style
-        include ../public/stylesheets/style.css
-      script.
-        function validateLogForm() {
-        var e = document.forms["log"]["login"].value;
-        var p = document.forms["log"]["password"].value;
-        var at = false;
-        var dot = false;
-        var i;
-        for (i = 0; i < e.length; i++)
-        {
-        if (e[i] == "@")
-        {
-        at = true;
-        }
-        if (e[i] == ".")
-        {
-        dot = true;
-        }
-        }
-        if (e == null || e == "" || p == null || p == "")
-        {
-        document.getElementById("error").innerHTML = "Must enter all info";
-        return false;
-        }
-        else if(at == false || dot == false)
-        {
-        document.getElementById("error").innerHTML = "Email is not valid";
-        return false;
-        }
-        else
-        {
-        return true;
-        }
-        }
-      script.
-        function validateNewForm() {
-        var p = document.forms["new"]["NewPass"].value;
-        var e = document.forms["new"]["NewLog"].value;
-        var f = document.forms["new"]["FName"].value;
-        var l = document.forms["new"]["LName"].value;
-        var at = false;
-        var dot = false;
-        var i;
-        for (i = 0; i < e.length; i++)
-        {
-        if (e[i] == "@")
-        {
-        at = true;
-        }
-        if (e[i] == ".")
-        {
-        dot = true;
-        }
-        }
-        if (f == null || f == "" || l == null || l == "" || e == null || e == "" || p == null || p == "")
-        {
-        document.getElementById("error").innerHTML = "Must enter all info";
-        return false;
-        }
-        else if(at == false || dot == false)
-        {
-        document.getElementById("error").innerHTML = "Email is not valid";
-        return false;
-        }
-        else
-        {
-        return true;
-        }
-        }
-    h1
-      b Blood²
-    p#error
-    h4 Login to Web App
-    form(name='log', method='post', onsubmit='return validateLogForm()')
+extends layout
+block content
+  head
+    title Blood² Login
+
+  #wrapper
+    h1 Blood²
+      fieldset.log
+        legend Login to Web App
+        p
+          input(type='text', name='NewLog', placeholder='Email')
+        p
+          input(type='password', name='NewPass', placeholder='Password')
+        p.remember_me
+          label
+            input(type='checkbox', name='remember_me')
+            | 			Remember me
+        p
+          button Add User
+
+    #addUser
+      fieldset
+        legend Create New Account OR Guest Access
+        p
+          input#inputUserEmail(type='text', placeholder='Email')
+        p
+          input#inputPassword(type='password', placeholder='Password')
+        p
+          input#inputFirstName(type='text', placeholder='First Name')
+        p 
+          input#inputLastName(type='text', placeholder='Last Name')
+        p
+          input#inputBloodType(type='text', placeholder='Blood Type')
+        p
+          input#inputLocation(type='text', placeholder='Zip-Code')
+        p
+          input#inputVisits(type='text', placeholder='visits')
+        p Date of Birth 
+          br
+          input#inputMonth(type='text', placeholder='Month: MM', maxlength='2', size='6')
+          input#inputDay(type='text', placeholder='Day: DD', maxlength='2', size='4')
+          input#inputYear(type='text', placeholder='Year: YYYY', maxlength='4', size='6')
+        p.remember_me
+          label
+            input(type='checkbox', name='remember_me')
+            |  Remember me
+        p
+          button#btnAddUser Add User
+    br
+    br
+    br    
+    br
+    br
+    br
+    p
+      #error
+        h4 DEBUG
+        
+    #userInfo
+      h4 User Info
       p
-        input(type='text', name='login', value='', placeholder='Email')
-      p
-        input(type='password', name='password', value='', placeholder='Password')
-      p.remember_me
-        label
-          input#remember_me(type='checkbox', name='remember_me')
-          | 			Remember me
-      p
-        input(type='submit', value='Login')
-    h4 Create New Account OR Guest Access
-    form(name='new', method='post', onsubmit='return validateNewForm()')
-      p
-        input(type='text', name='NewLog', value='', placeholder='Email')
-      p
-        input(type='password', name='NewPass', value='', placeholder='Password')
-      p
-        input(type='text', name='FName', value='', placeholder='First Name')
-      p
-        input(type='text', name='LName', value='', placeholder='Last Name')
-      p.remember_me
-        label
-          input#remember_me(type='checkbox', name='remember_me')
-          | 			Remember me
-      p
-        input(type='submit', value='Create Account')
-      p
-        input(type='submit', value='Guest Access')
+        strong Name:
+        |  <span id='userInfoName'></span>
+        br
+        strong Zip:
+        |  <span id='userInfoLocation'></span>
+        br
+        strong Blood Type:
+        |  <span id='userInfoBloodType'></span>
+        br
+        strong Date of Birth:
+        |  <span id='userInfoDoB'></span>
+        br
+        strong Visits:
+        |  <span id='userInfoVisits'></span>
+ 
+    h4 User List
+    #userList
+      table
+        thead
+          th fname
+          th Email
+          th Delete?
+        tbody
