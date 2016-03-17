@@ -2,6 +2,10 @@ extends layout
 block content
   head
     title Blood² Login
+	script.
+    function move() {
+      window.location.href = '/temp'
+    }
 
   #wrapper
     h1 Blood²
@@ -16,7 +20,7 @@ block content
             input(type='checkbox', name='remember_me')
             | 			Remember me
         p
-          button Add User
+          button(onclick="move()") Log in
 
     #addUser
       fieldset
