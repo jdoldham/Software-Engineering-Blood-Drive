@@ -21,7 +21,7 @@ p {
     color: red;
 	text-align: center;
 	font: 17px arial, sans-serif;
-	
+
 }
 body {
     background-image: url("/images/img1.png");
@@ -30,7 +30,7 @@ body {
     background-position: right bottom;
 }
 table {
-	margin-left:auto; 
+	margin-left:auto;
     margin-right:auto;
     font: 100% Verdana, Arial, Helvetica, sans-serif;
 	border: 2px solid black;
@@ -46,10 +46,10 @@ th {
     background-color:white;
     color:black;
 }
-td  {     
+td  {
     font-size: medium;
-    padding: 0.25em 0.25em;   
-    width: 14%; 
+    padding: 0.25em 0.25em;
+    width: 14%;
     height: 15px;
     text-align: left;
     vertical-align: top;
@@ -58,9 +58,9 @@ td  {
 	background-color:white;
     color:black;
 }
-.date  {     
+.date  {
     font-size: large;
-    padding: 0.25em 0.25em;   
+    padding: 0.25em 0.25em;
     text-align: left;
     vertical-align: top;
 }
@@ -87,4 +87,46 @@ legend {
 	border:1px solid navy;
 	color:navy;
 	text-align:center;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: navy;
+  border: none;
+  color: white;
+  text-align: center;
+	font: 12px arial, sans-serif;
+  padding: 10px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '<<';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -40px;
+  transition: 0.5s;
+}
+.button:hover {
+    background-color: #33A1DE;
+}
+
+.button:hover span {
+  padding-left: 20px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }

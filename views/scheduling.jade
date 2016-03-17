@@ -1,0 +1,48 @@
+html
+  body
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/javascripts/calendarFunctions.js')
+    script(src='/javascripts/global.js')
+    script.
+      function move() {
+        window.location.href = '/temp'
+      }
+    h1
+      link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    p Calendar Test
+    // Wrapper
+    #wrapper
+      // Calendar List
+      // Calendar LIST
+      button#btnHome.button(onclick="move()")
+        span Back to home
+      h2 Calendar List
+      #calendarList
+        table
+          thead
+            th Hour
+            th Minute
+            th Station
+            th
+          tbody
+      // /Calendar LIST
+      // ADD Calendar Event
+      h2 Add Calendar Event
+      #addCalendar
+        fieldset
+          input#inputDay(type='number', placeholder='Day', min='1', max='31')
+          input#inputMonth(type='number', placeholder='Month', min='1', max='12')
+          input#inputYear(type='number', placeholder='Year', min='2010', max='2099')
+          br
+          input#inputHour(type='number', placeholder='Hour', min='0', max='23')
+          input#inputMinute(type='number', placeholder='Minute', min='0', max='59')
+          br
+          input#inputLocation(type='number', placeholder='Location')
+          input#inputStation(type='number', placeholder='Station')
+          br
+          input#inputOp(type='text', placeholder='Operator')
+          input#inputPatient(type='text', placeholder='Patient')
+          br
+          button#btnAddCalendar.button Add Calendar Event
+      // /Add Calendar Event
+    // /WRAPPER

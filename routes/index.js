@@ -10,6 +10,13 @@ router.get('/', function(req, res, next) {
 router.get('/helloworld', function(req, res) {
     res.render('helloworld', { title: 'Hello, World!' });
 });
+/* GET Hello World page. */
+router.get('/scheduling', function(req, res) {
+    res.render('scheduling', { title: 'calendar page' });
+});
+router.get('/temp', function(req, res) {
+    res.render('temp', { title: 'calendar page' });
+});
 
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {

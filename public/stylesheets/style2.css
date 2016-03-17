@@ -1,0 +1,79 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    color: navy;
+	text-align: center;
+	font: 30px arial, sans-serif;
+}
+
+h4 {
+    color: navy;
+	text-align: center;
+	font: 20px arial, sans-serif;
+}
+p {
+	text-align: center;
+	font: 15px arial, sans-serif;
+}
+#error {
+	background-color:yellow;
+    color: red;
+	text-align: center;
+	font: 17px arial, sans-serif;
+
+}
+body {
+    background-image: url("Background.png");
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: right bottom;
+}
+table {
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    }
+/* Styling for the column headers (days of the week) */
+th {
+    padding: 0 0.5em;
+    text-align: center;
+    background-color:navy;
+    color:white;
+    }
+/* Styling for the individual cells (days) */
+td  {
+    font-size: medium;
+    padding: 0.25em 0.25em;
+    width: 14%;
+    height: 80px;
+    text-align: left;
+    vertical-align: top;
+    }
+/* Styling for the date numbers */
+.date  {
+    font-size: large;
+    padding: 0.25em 0.25em;
+    text-align: left;
+    vertical-align: top;
+    }
+
+
+    .button {
+        background-color: navy;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+    }
+
+    .button:hover {
+        background-color: #33A1DE;
+    }
