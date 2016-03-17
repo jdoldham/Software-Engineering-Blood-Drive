@@ -2,7 +2,7 @@ extends layout
 block content
   head
     title Blood² Login
-	script.
+  script.
     function move() {
       window.location.href = '/temp'
     }
@@ -31,7 +31,7 @@ block content
           input#inputPassword(type='password', placeholder='Password')
         p
           input#inputFirstName(type='text', placeholder='First Name')
-        p 
+        p
           input#inputLastName(type='text', placeholder='Last Name')
         p
           input#inputBloodType(type='text', placeholder='Blood Type')
@@ -39,7 +39,7 @@ block content
           input#inputLocation(type='text', placeholder='Zip-Code')
         p
           input#inputVisits(type='text', placeholder='visits')
-        p Date of Birth 
+        p Date of Birth
           br
           input#inputMonth(type='text', placeholder='Month: MM', maxlength='2', size='6')
           input#inputDay(type='text', placeholder='Day: DD', maxlength='2', size='4')
@@ -52,14 +52,14 @@ block content
           button#btnAddUser Add User
     br
     br
-    br    
+    br
     br
     br
     br
     p
       #error
         h4 DEBUG
-        
+
     #userInfo
       h4 User Info
       p
@@ -77,7 +77,7 @@ block content
         br
         strong Visits:
         |  <span id='userInfoVisits'></span>
- 
+
     h4 User List
     #userList
       table
