@@ -1,25 +1,84 @@
 extends layout
-
 block content
-  h1= title
-  p Welcome to our test
-  
-  // Wrapper
+  head
+    title Blood² Login
+  script.
+    function move() {
+      window.location.href = '/temp'
+    }
+
   #wrapper
-  
-    // USER INFO
+    h1 Blood²
+      fieldset.log
+        legend Login to Web App
+        p
+          input(type='text', name='NewLog', placeholder='Email')
+        p
+          input(type='password', name='NewPass', placeholder='Password')
+        p.remember_me
+          label
+            input(type='checkbox', name='remember_me')
+            | 			Remember me
+        p
+          button(onclick="move()") Log in
+
+    #addUser
+      fieldset
+        legend Create New Account OR Guest Access
+        p
+          input#inputUserEmail(type='text', placeholder='Email')
+        p
+          input#inputPassword(type='password', placeholder='Password')
+        p
+          input#inputFirstName(type='text', placeholder='First Name')
+        p
+          input#inputLastName(type='text', placeholder='Last Name')
+        p
+          input#inputBloodType(type='text', placeholder='Blood Type')
+        p
+          input#inputLocation(type='text', placeholder='Zip-Code')
+        p
+          input#inputVisits(type='text', placeholder='visits')
+        p Date of Birth
+          br
+          input#inputMonth(type='text', placeholder='Month: MM', maxlength='2', size='6')
+          input#inputDay(type='text', placeholder='Day: DD', maxlength='2', size='4')
+          input#inputYear(type='text', placeholder='Year: YYYY', maxlength='4', size='6')
+        p.remember_me
+          label
+            input(type='checkbox', name='remember_me')
+            |  Remember me
+        p
+          button#btnAddUser Add User
+    br
+    br
+    br
+    br
+    br
+    br
+    p
+      #error
+        h4 DEBUG
+
     #userInfo
-      h2 Uer Info
+      h4 User Info
       p
         strong Name:
         |  <span id='userInfoName'></span>
         br
-        strong Location:
+        strong Zip:
         |  <span id='userInfoLocation'></span>
-      // /USER INFO
-  
-    // USER LIST
-    h2 User List
+        br
+        strong Blood Type:
+        |  <span id='userInfoBloodType'></span>
+        br
+        strong Date of Birth:
+        |  <span id='userInfoDoB'></span>
+        br
+        strong Visits:
+        |  <span id='userInfoVisits'></span>
+
+    h4 User List
     #userList
       table
         thead
@@ -27,30 +86,3 @@ block content
           th Email
           th Delete?
         tbody
-    // /USER LIST
-    
-    // ADD USER
-    h2 Add User
-    #addUser
-      fieldset
-        input#inputUserEmail(type='text', placeholder='Email')
-        br
-        input#inputFirstName(type='text', placeholder='First Name')
-        input#inputLastName(type='text', placeholder='Last Name')
-        p Date of Birth
-        input#inputDay(type='text', placeholder='Day')
-        input#inputMonth(type='text', placeholder='Month')
-        input#inputYear(type='text', placeholder='Year')
-        br
-        input#inputBloodType(type='text', placeholder='Blood Type')
-        br
-        input#inputLocation(type='text', placeholder='Zip-Code')
-        br
-        input#inputVisits(type='text', placeholder='visits')
-        input#inputPassword(type='text', placeholder='Password')
-        br
-        button#btnAddUser Add User
-    // /Add User
-      
-      
-  // /WRAPPER

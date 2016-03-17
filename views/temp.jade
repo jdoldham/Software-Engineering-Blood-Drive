@@ -1,0 +1,50 @@
+doctype html
+html
+  title Blood² Home
+  link(rel='stylesheet', type='text/css', href='/stylesheets/style2.css')
+  script(src='/javascripts/global.js')
+  script.
+    function move() {
+      window.location.href = '/scheduling'
+    }
+    function move2() {
+      window.location.href = '/'
+    }
+  button.button(onclick="move()") Schedule an appointment
+  button.button(onclick="move2()") Log out
+  br
+  br
+  h1
+    | Upcoming events
+    br
+  body
+    #nextWeek
+      table
+        thead
+          th Monday
+          th Tuesday
+          th Wednesday
+          th Thursday
+          th Friday
+          th Saturday
+          th Sunday
+          th
+        tbody
+    br
+  h4
+    | User Info
+    p
+      strong Name:
+      |  <span id='userInfoName'></span>
+      br
+      strong Zip:
+      |  <span id='userInfoLocation'></span>
+      br
+      strong Blood Type:
+      |  <span id='userInfoBloodType'></span>
+      br
+      strong Date of Birth:
+      |  <span id='userInfoDoB'></span>
+      br
+      strong Visits:
+      |  <span id='userInfoVisits'></span>

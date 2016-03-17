@@ -61,6 +61,11 @@ function showUserInfo(event) {
   //Populate Info Box
   $('#userInfoName').text(thisUserObject.fname + " " + thisUserObject.lname);
   $('#userInfoLocation').text(thisUserObject.zipcode);
+  $('#userInfoName').text(thisUserObject.fname + " " + thisUserObject.lname);
+  $('#userInfoLocation').text(thisUserObject.zipcode);
+  $('#userInfoDoB').text(thisUserObject.dob_month + ", " + thisUserObject.dob_day + ", " + thisUserObject.dob_year);
+  $('#userInfoVisits').text(thisUserObject.donation_count);
+  $('#userInfoBloodType').text(thisUserObject.blood_type);
 };
 
 //Add User
@@ -88,6 +93,20 @@ function addUser(event) {
       'password': $('#addUser fieldset input#inputPassword').val(),
       'blood_type': $('#addUser fieldset input#inputBloodType').val()
     }
+    /*
+    var existingUser = false;
+    
+    $.getJSON( '/users/useremail', newUser, function( data ) {
+      $.each(data, function(){
+        alert(this.email);
+      });
+    });
+    
+    if(existingUser){
+      alert("A user with this email already exists");
+      return false;
+    }
+    */
     
     //Use AJAX to post the object to our adduser service
     $.ajax({

@@ -1,58 +1,132 @@
 body {
-  padding: 30px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: lightblue;
 }
 
-h2 {
-	margin:0 0 .5em 0;
+h1 {
+    color: navy;
+	text-align: center;
+	font: 30px arial, sans-serif;
 }
-
-a {
-  color: #00B7FF;
+h4 {
+    color: navy;
+	text-align: center;
+	font: 20px arial, sans-serif;
 }
-
-#wrapper {
-	padding-left:312px;
-	position:relative;
+p {
+	text-align: center;
+	font: 15px arial, sans-serif;
 }
+#error {
+	background-color:yellow;
+    color: red;
+	text-align: center;
+	font: 17px arial, sans-serif;
 
-#userList {
-	margin:0 0 30px 0;
 }
-	#userList table {
-		border-collapse:separate;
-		border-spacing:1px;
-		background:#CCC;
-	}
-		#userList table th {
-			background:#EEE;
-			font-weight:600;
-			padding:10px 20px;
-			text-align:center;
-		}
-		#userList table tbody {
-			padding:0; margin:0;
-			border-collapse:collapse;
-			border-spacing:0px;
-		}
-			#userList table td {
-				background:#FFF;
-				padding:5px 10px;
-				text-align:center;
-			}
-
-#userInfo {
-	width:250px;
-	position:absolute;
-	top:0; left:0;
+body {
+    background-image: url("/images/img1.png");
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: right bottom;
 }
-	#userInfo p {
-		padding:15px;
-		border:1px solid #CCC;
-		background:rgba(80,120,255,0.05);
-	}
-
+table {
+	margin-left:auto;
+    margin-right:auto;
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+	border: 2px solid black;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 50%;
+}
+th {
+    padding: 0 0.5em;
+	border: 2px solid black;
+	border-collapse: collapse;
+    text-align: center;
+    background-color:white;
+    color:black;
+}
+td  {
+    font-size: medium;
+    padding: 0.25em 0.25em;
+    width: 14%;
+    height: 15px;
+    text-align: left;
+    vertical-align: top;
+	border: 2px solid black;
+	border-collapse: collapse;
+	background-color:white;
+    color:black;
+}
+.date  {
+    font-size: large;
+    padding: 0.25em 0.25em;
+    text-align: left;
+    vertical-align: top;
+}
 fieldset {
-	border:0;
-	padding:0; margin:0;
+	margin: 0 auto;
+	text-align: left;
+	width: 400px;
+    border-color:navy;
+    border-style: solid;
+}
+fieldset.log {
+	margin: 0 auto;
+	text-align: left;
+	width: 250px;
+    border-color:navy;
+    border-style: solid;
+}
+form
+{
+    text-align: center;
+}
+legend {
+	font: 20px arial, sans-serif;
+	border:1px solid navy;
+	color:navy;
+	text-align:center;
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: navy;
+  border: none;
+  color: white;
+  text-align: center;
+	font: 12px arial, sans-serif;
+  padding: 10px;
+  width: 80px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '<<';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -40px;
+  transition: 0.5s;
+}
+.button:hover {
+    background-color: #33A1DE;
+}
+
+.button:hover span {
+  padding-left: 20px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }

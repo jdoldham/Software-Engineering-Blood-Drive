@@ -12,6 +12,19 @@ router.get('/userlist', function(req, res) {
   });
 });
 
+/* 
+ * GET user by email.
+ */
+router.get('/useremail/:id', function(req, res) {
+  var db = req.db;
+  var collection = db.get('userlist');
+  //var userEmail = req.params.
+  //console.log("We are Here " + req.);
+  collection.find({'email' : req.params.email},{},function(e,docs){
+    res.json(docs);
+  });
+});
+
 /*
  *POST to adduser
  */
