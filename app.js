@@ -4,14 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+//var session = require('express-session');
+var sessionstorage = require('sessionstorage');
 
 // New Code
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
+var db = monk('localhost:27017/blood');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var calendar = require('./routes/calendar');
 
 var app = express();
 
@@ -25,16 +28,27 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+/*app.use(session({secret : '123abc',
+    saveUninitialized: false,
+    resave: false}));*/
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
-    req.db = db;
-    next();
+  req.db = db;
+  next();
 });
+
+/* var sess;
+app.get('/', function(req,res){
+  console.log("session stuff");
+  sess = req.session;
+  sess.email;
+}); */
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/calendar', calendar);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

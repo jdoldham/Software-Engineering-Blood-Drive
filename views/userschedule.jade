@@ -1,0 +1,31 @@
+html
+  body
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='/javascripts/calendarFunctions.js')
+    script(src='/javascripts/global.js')
+    script.
+      function move() {
+        window.location.href = '/temp'
+      }
+    h1
+      link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+    p Calendar Test
+    // Wrapper
+    #wrapper
+      // Calendar List
+      // Calendar LIST
+      button#btnHome.button(onclick="move()")
+        span Back to home
+      h2 Calendar List
+      #calendarList
+        table
+          thead
+            th Date
+            th Time
+            th Station
+            th Location
+            th Operator
+            th
+          tbody
+      // /Calendar LIST
+    // /WRAPPER
